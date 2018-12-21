@@ -121,13 +121,13 @@ def main():
             ages = np.arange(0, 101).reshape(101, 1)
             predicted_ages = results[1].dot(ages).flatten()
 
-            # draw results
-            for i, d in enumerate(detected):
-                label = "{}, {}".format(int(predicted_ages[i]),
-                                        "F" if predicted_genders[i][0] < 0.5 else "M")
-                draw_label(img, (d.left(), d.top()), label)
+            ## draw results
+            #for i, d in enumerate(detected):
+            #    label = "{}, {}".format(int(predicted_ages[i]),
+            #                            "F" if predicted_genders[i][0] < 0.5 else "M")
+            #    draw_label(img, (d.left(), d.top()), label)
 
-        cv2.imshow("result", img)
+        ##cv2.imshow("result", img)
         key = cv2.waitKey(-1) if image_dir else cv2.waitKey(30)
 
         if key == 27:  # ESC
