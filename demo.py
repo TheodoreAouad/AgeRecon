@@ -120,6 +120,7 @@ def main():
             predicted_genders = results[0]
             ages = np.arange(0, 101).reshape(101, 1)
             predicted_ages = results[1].dot(ages).flatten()
+            
             print(predicted_ages)
 
             ## draw results
