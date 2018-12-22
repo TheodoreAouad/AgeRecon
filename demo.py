@@ -95,7 +95,7 @@ def main():
     model.load_weights(weight_file)
 
     image_generator = yield_images_from_dir(image_dir) if image_dir else yield_images()
-    ages_pred = []
+    ages_pred = ""
     for img in image_generator:
         input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img_h, img_w, _ = np.shape(input_img)
@@ -121,7 +121,7 @@ def main():
             ages = np.arange(0, 101).reshape(101, 1)
             predicted_ages = results[1].dot(ages).flatten()
             
-            ages_pred.append(predicted_ages)
+            ages_pred += str(predicted_ages) + " "
 
             ## draw results
             #for i, d in enumerate(detected):
