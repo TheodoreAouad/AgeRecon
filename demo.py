@@ -134,7 +134,8 @@ def main():
 
         if key == 27:  # ESC
             break
-
-    return ages_pred
+    preds = open("predictions.txt", "w")
+    preds.write(ages_pred)
+    preds.close()
 if __name__ == '__main__':
     main()
